@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Cinemato.ui.wrapper.WrapperController">
+   <children>
+      <ImageView fx:id="CloseButton" fitHeight="25.0" fitWidth="25.0" layoutX="985.0" layoutY="14.0" onMousePressed="#handleCloseButtonAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/assets/close_icon.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="contentPane" layoutY="140.0" prefHeight="460.0" prefWidth="1024.0" />
+      <AnchorPane fx:id="headerPane" layoutY="50.0" prefHeight="90.0" prefWidth="1024.0" />
+   </children>
+   <stylesheets>
+      <URL value="@../main.css" />
+      <URL value="@wrapper.css" />
+   </stylesheets>
+</AnchorPane>

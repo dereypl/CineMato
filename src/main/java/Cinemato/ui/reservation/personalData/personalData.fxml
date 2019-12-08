@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Cinemato.ui.repertoire.RepertoireController">
+   <children>
+      <ImageView fitHeight="113.0" fitWidth="228.0" layoutX="120.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/logo_small.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff0e39" height="18.0" layoutY="75.0" width="110.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff0e39" height="18.0" layoutX="354.0" layoutY="75.0" width="670.0" />
+      <ImageView fx:id="CloseButton" fitHeight="25.0" fitWidth="25.0" layoutX="985.0" layoutY="14.0" onMousePressed="#handleCloseButtonAction" opacity="0.25" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/close_icon.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="474.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DANE OSOBOWE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <JFXTextField focusColor="#ff0e39" layoutX="450.0" layoutY="248.0" promptText="Imie" unFocusColor="#8d8d8d" />
+      <JFXTextField focusColor="#ff0e39" layoutX="450.0" layoutY="298.0" promptText="Nazwisko" unFocusColor="#8d8d8d" />
+      <JFXTextField focusColor="#ff0e39" layoutX="450.0" layoutY="348.0" promptText="Email" unFocusColor="#8d8d8d" />
+      <JFXTextField focusColor="#ff0e39" layoutX="719.0" layoutY="252.0" promptText="Numer karty debetowej" unFocusColor="#8d8d8d" />
+      <JFXTextField focusColor="#ff0e39" layoutX="719.0" layoutY="302.0" promptText="Kod CVV" unFocusColor="#8d8d8d" />
+      <Text fill="WHITE" layoutX="747.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PŁATNOŚĆ">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="120.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REZERWACJA">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="91.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/movie_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="446.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/person_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="719.0" layoutY="205.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/payment_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="184.0" fitWidth="127.0" layoutX="91.0" layoutY="246.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/poster.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="231.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Film">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="232.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="231.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Godzina">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="231.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miejsca">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#ff0e39" layoutX="230.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Movie title" />
+      <Text fill="#ff0e39" layoutX="232.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-12-05" />
+      <Text fill="#ff0e39" layoutX="232.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19:30" />
+      <Text fill="#ff0e39" layoutX="232.0" layoutY="430.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E12.E13" />
+      <Text fill="#4d4d4d" layoutX="91.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; powrót" />
+      <JFXButton layoutX="714.0" layoutY="474.0" text="Potwierdzam rezerwację" textFill="WHITE" />
+   </children>
+   <stylesheets>
+      <URL value="@../../main.css" />
+      <URL value="@personalData.css" />
+   </stylesheets>
+</AnchorPane>

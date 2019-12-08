@@ -1,0 +1,18 @@
+.movie{
+    -fx-background-color: #101113;
+}
+
+.chooseButton{
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-background-color: #272727;
+    -fx-pref-width: 150px;
+    -fx-pref-height: 28px;
+}
+
+.movieWrapper{
+    -fx-background-image: url("../../../resources/assets/background.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1024 600;
+    -fx-background-position: center;
+}

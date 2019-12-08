@@ -1,0 +1,60 @@
+.startButton{
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-background-color: white;
+    -fx-pref-width: 280px;
+    -fx-pref-height: 50px;
+}
+
+
+.ScrollPane{
+    -fx-background-color:transparent;
+}
+
+
+.scroll-bar:vertical .track{
+    -fx-background-color :#101113;
+    -fx-border-color :#101113;
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color :transparent;
+    -fx-background-radius : 0.0em;
+    -fx-padding :0.0 10.0 0.0 0.0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.15em 0.0;
+    -fx-background-color :transparent;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow{
+    -fx-shape : " ";
+    -fx-padding :0.0 0.15em;
+}
+
+
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #757575
+}
+
+.scroll-bar:vertical .thumb:hover {
+    -fx-background-color: #FF0E39;
+}
+
+.scroll-pane {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane:focused {
+    -fx-background-insets: 0;
+}
+
+.scroll-pane .corner {
+    -fx-background-insets: 0;
+}

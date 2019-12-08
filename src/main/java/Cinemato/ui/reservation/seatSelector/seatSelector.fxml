@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Cinemato.ui.reservation.seatSelector.SeatSelectorController">
+   <children>
+      <Text fill="WHITE" layoutX="119.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATA">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="90.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/movie_icon.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="91.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Film">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#ff0e39" layoutX="128.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Movie title" />
+      <Text fill="#4d4d4d" layoutX="91.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; powrót" />
+      <JFXButton layoutX="774.0" layoutY="394.0" text="Przejdź do płatności" textFill="WHITE" />
+      <ChoiceBox fx:id="choiceData" layoutX="91.0" layoutY="180.0" prefWidth="150.0" />
+      <Text fill="WHITE" layoutX="120.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GODZINA">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="91.0" layoutY="234.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/movie_icon.png" />
+         </image>
+      </ImageView>
+      <ChoiceBox layoutX="92.0" layoutY="273.0" prefWidth="150.0" />
+      <ImageView fitHeight="141.0" fitWidth="600.0" layoutX="354.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/screen.png" />
+         </image>
+      </ImageView>
+   </children>
+   <stylesheets>
+      <URL value="@../../main.css" />
+   </stylesheets>
+</AnchorPane>

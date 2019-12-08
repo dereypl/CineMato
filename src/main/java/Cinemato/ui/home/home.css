@@ -1,0 +1,7 @@
+.startButton{
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-background-color: white;
+    -fx-pref-width: 280px;
+    -fx-pref-height: 50px;
+}

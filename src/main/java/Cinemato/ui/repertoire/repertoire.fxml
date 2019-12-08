@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Cinemato.ui.repertoire.RepertoireController">
+   <children>
+      <ScrollPane hbarPolicy="NEVER" prefHeight="430.0" prefWidth="1024.0">
+        <content>
+            <VBox fx:id="movieContainer" fillWidth="false" prefHeight="430.0" prefWidth="1024.0" />
+        </content>
+      </ScrollPane>
+   </children>
+   <stylesheets>
+      <URL value="@repertoire.css" />
+      <URL value="@../main.css" />
+   </stylesheets>
+</AnchorPane>

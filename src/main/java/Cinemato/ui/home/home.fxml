@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<AnchorPane id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Cinemato.ui.home.HomeController">
+   <children>
+      <ImageView fitHeight="182.0" fitWidth="389.0" layoutX="328.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/assets/logo.png" />
+         </image>
+      </ImageView>
+      <JFXButton alignment="CENTER" layoutX="366.0" layoutY="293.0" onAction="#handleGoToRepertoireAction" styleClass="startButton" stylesheets="@home.css" text="Rozpocznij &gt;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </JFXButton>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff0e39" height="18.0" layoutY="120.0" width="280.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff0e39" height="18.0" layoutX="744.0" layoutY="120.0" width="280.0" />
+   </children>
+   <stylesheets>
+      <URL value="@home.css" />
+      <URL value="@../main.css" />
+   </stylesheets>
+</AnchorPane>

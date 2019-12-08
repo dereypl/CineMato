@@ -1,0 +1,6 @@
+#homePane{
+    -fx-background-image: url("../resources/assets/background.png");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 1024 600;
+    -fx-background-position: center;
+}
