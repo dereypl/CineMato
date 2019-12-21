@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="homePane" fx:id="auditorium" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <stylesheets>
+      <URL value="@../../main.css" />
+   </stylesheets>
+   <children>
+      <JFXButton layoutX="14.0" layoutY="14.0" />
+      <JFXButton layoutX="78.0" layoutY="14.0" />
+      <JFXButton layoutX="154.0" layoutY="14.0" />
+      <JFXButton layoutX="222.0" layoutY="14.0" />
+      <JFXButton layoutX="295.0" layoutY="14.0" />
+      <JFXButton layoutX="397.0" layoutY="14.0" />
+   </children>
+</AnchorPane>

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Cinemato.ui.reservation.seatSelector.SeatSelectorController">
+<AnchorPane id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Cinemato.ui.reservation.seatSelector.SeatSelectorController">
    <children>
       <Text fill="WHITE" layoutX="119.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATA">
          <font>
@@ -28,7 +28,7 @@
       </Text>
       <Text fill="#ff0e39" layoutX="128.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Movie title" />
       <Text fill="#4d4d4d" layoutX="91.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; powrót" />
-      <JFXButton layoutX="774.0" layoutY="394.0" text="Przejdź do płatności" textFill="WHITE" />
+      <JFXButton fx:id="goToPaymentButton" layoutX="774.0" layoutY="394.0" onAction="#handleGoToPaymentAction" text="Przejdź do płatności" textFill="WHITE" />
       <ChoiceBox fx:id="choiceData" layoutX="91.0" layoutY="180.0" prefWidth="150.0" />
       <Text fill="WHITE" layoutX="120.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GODZINA">
          <font>
@@ -40,12 +40,16 @@
             <Image url="@../../../resources/assets/movie_icon.png" />
          </image>
       </ImageView>
-      <ChoiceBox layoutX="92.0" layoutY="273.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="choiceHour" layoutX="92.0" layoutY="273.0" prefWidth="150.0" />
       <ImageView fitHeight="141.0" fitWidth="600.0" layoutX="354.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../resources/assets/screen.png" />
          </image>
       </ImageView>
+      <JFXButton layoutX="404.0" layoutY="205.0" text="Seat1" textFill="WHITE" />
+      <JFXButton layoutX="532.0" layoutY="205.0" text="Seat2" textFill="WHITE" />
+      <JFXButton layoutX="682.0" layoutY="206.0" text="Seat3" textFill="WHITE" />
+      <JFXButton layoutX="845.0" layoutY="206.0" text="Seat4" textFill="WHITE" />
    </children>
    <stylesheets>
       <URL value="@../../main.css" />
