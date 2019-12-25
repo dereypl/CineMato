@@ -21,17 +21,26 @@
                      </font>
                   </JFXButton>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#272727" height="18.0" layoutY="114.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="1024.0" />
-                  <Text fill="WHITE" layoutX="162.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa filmu">
+                  <Text fx:id="movieName" fill="WHITE" layoutX="162.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nazwa filmu">
                      <font>
                         <Font name="Arial Bold" size="18.0" />
                      </font>
                   </Text>
-                  <Text fill="#545454" layoutX="162.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" wrappingWidth="451.6708984375">
+                  <Text fx:id="movieDescription" fill="#545454" layoutX="162.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam" wrappingWidth="500.0">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </Text>
             <Pane layoutX="30.0" prefHeight="130.0" prefWidth="90.0" style="-fx-background-color: white;" />
+            <Text fx:id="movieRating" fill="#ff0e39" layoutX="134.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7,4" />
+            <Text fx:id="movieYear" fill="#323233" layoutX="162.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2001" />
+            <Text fx:id="movieDuration" fill="#323233" layoutX="202.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" />
+            <Text fill="#323233" layoutX="195.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I" />
+            <Text fx:id="movieYear12" fill="#323233" layoutX="225.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="minut" />
+            <Text fill="#323233" layoutX="260.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I" />
+            <Text fx:id="movieDirector" fill="#323233" layoutX="270.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reżyser" />
+            <Text fill="#323233" layoutX="400.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I" />
+            <Text fx:id="movieGenere" fill="#323233" layoutX="410.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gatunek" />
                </children>
             </Pane>
          </children>

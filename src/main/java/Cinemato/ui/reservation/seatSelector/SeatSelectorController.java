@@ -8,9 +8,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.java.Cinemato.models.Movie;
 import main.java.Cinemato.ui.MainController;
 import main.java.Cinemato.ui.wrapper.WrapperController;
 
@@ -29,8 +32,13 @@ public class SeatSelectorController implements Initializable {
         return instance;
     }
 
+    private Movie movie;
+
     @FXML
     private JFXButton goToPaymentButton;
+
+    @FXML
+    private Text movieTitle;
 
 
     @FXML
@@ -44,10 +52,19 @@ public class SeatSelectorController implements Initializable {
         WrapperController.getInstance().changeContentToPayment(event);
     }
 
+    @FXML
+    private void handleGoBackAction(MouseEvent event) {
+        WrapperController.getInstance().backToRepertoire(event);
+    }
 
+    public void setMovie(Movie m) {
+        this.movie = m;
+        movieTitle.setText(movie.getTitle());
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         choiceData.getItems().add("Choice 1");
         choiceData.getItems().add("Choice 2");
         choiceData.getItems().add("Choice 3");

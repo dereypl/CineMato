@@ -14,8 +14,11 @@ import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import main.java.Cinemato.connection.Client;
+import main.java.Cinemato.connection.Message;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 public abstract class MainController extends Application implements Initializable {
@@ -24,7 +27,13 @@ public abstract class MainController extends Application implements Initializabl
     private double yOffset = 0;
 
     @FXML
-    void handleCloseButtonAction(MouseEvent event) {
+    void handleCloseButtonAction(MouseEvent event) throws IOException, ClassNotFoundException {
+
+        Message terminate = Client.getInstance().sendMessage(new Message("terminate",new ArrayList<>()));
+        System.out.println(terminate.getType());
+
+        Client.getInstance().stopConnection();
+
         System.exit(0);
     }
 

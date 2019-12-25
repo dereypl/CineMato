@@ -7,8 +7,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import main.java.Cinemato.models.Movie;
 import main.java.Cinemato.ui.MainController;
+import main.java.Cinemato.ui.reservation.seatSelector.SeatSelectorController;
 import main.java.Cinemato.ui.wrapper.WrapperController;
 
 import java.io.IOException;
@@ -16,6 +19,30 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MovieController {
+
+    private Movie movie;
+
+    @FXML
+    private Text movieName;
+
+    @FXML
+    private Text movieDescription;
+
+    @FXML
+    private Text movieRating;
+
+    @FXML
+    private Text movieYear;
+
+    @FXML
+    private Text movieDuration;
+
+    @FXML
+    private Text movieDirector;
+
+    @FXML
+    private Text movieGenere;
+
 
     private static MovieController instance;
     public MovieController() {
@@ -28,6 +55,17 @@ public class MovieController {
     @FXML
     void chooseMovie(ActionEvent event) {
         WrapperController.getInstance().changeContentToSeatSelector(event);
+        SeatSelectorController.getInstance().setMovie(movie);
     }
 
+    public void setMovie(Movie m) {
+        this.movie = m;
+        movieName.setText(movie.getTitle());
+        movieDescription.setText(movie.getDescription());
+        movieDirector.setText(movie.getDirector());
+        movieDuration.setText(movie.getDuration_min());
+        movieGenere.setText(movie.getGenre());
+        movieRating.setText(movie.getRating());
+        movieYear.setText(movie.getYear());
+    }
 }
