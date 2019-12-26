@@ -99,10 +99,32 @@ public class SeatSelectorController implements Initializable {
 
     @FXML
     private void ShowSelectedDate(ActionEvent event) {
-        System.out.println(choiceData.getValue().getId());
+
+
+        ArrayList<String> query = new ArrayList<>();
+        query.add(Integer.toString(choiceData.getValue().getId()));
+
+        Message getSeatsReserved = null;
+
+        try {
+            getSeatsReserved = Client.sendMessage(new Message("getSeatsReserved", query));
+            ArrayList<String> body = getSeatsReserved.getBody();
+
+            for (String seat_id : body) {
+                System.out.println(seat_id);
+
+                this.Seats.get(Integer.parseInt(seat_id)).setAvailable(false);
+                SeatController.getInstance().setDisabled(true);
+            }
+            System.out.println(choiceData.getValue().getId());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void setMovie(Movie m) {
+        public void setMovie(Movie m) {
         this.movie = m;
         movieTitle.setText(movie.getTitle());
 

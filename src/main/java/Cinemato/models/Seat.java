@@ -5,6 +5,16 @@ public class Seat {
     private int Id;
     private String Row;
     private int Number;
+    private boolean available=true;
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
 
     public Seat(int id, String row, int number) {
         Id = id;
