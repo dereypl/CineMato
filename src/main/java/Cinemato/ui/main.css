@@ -4,3 +4,7 @@
     -fx-background-size: 1024 600;
     -fx-background-position: center;
 }
+
+.noBackground{
+    -fx-background-color:transparent;
+}

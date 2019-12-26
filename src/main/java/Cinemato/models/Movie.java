@@ -50,8 +50,8 @@ public class Movie {
         return Duration_min;
     }
 
-    public int getId() {
-        return Id;
+    public String getId() {
+        return Integer.toString(Id);
     }
 
 
