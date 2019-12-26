@@ -5,7 +5,7 @@ public class Seat {
     private int Id;
     private String Row;
     private int Number;
-    private boolean available=true;
+    private boolean available;
 
     public boolean isAvailable() {
         return available;
@@ -20,6 +20,7 @@ public class Seat {
         Id = id;
         Row = row;
         Number = number;
+        available = true;
     }
 
     public int getId() {

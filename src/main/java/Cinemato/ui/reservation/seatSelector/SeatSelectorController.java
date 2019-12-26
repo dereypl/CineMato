@@ -2,38 +2,43 @@ package main.java.Cinemato.ui.reservation.seatSelector;
 
 
 import com.jfoenix.controls.JFXButton;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import javafx.util.StringConverter;
 import main.java.Cinemato.connection.Client;
 import main.java.Cinemato.connection.Message;
 import main.java.Cinemato.models.Movie;
 import main.java.Cinemato.models.Screening;
 import main.java.Cinemato.models.Seat;
-import main.java.Cinemato.ui.MainController;
-import main.java.Cinemato.ui.repertoire.movie.MovieController;
+import main.java.Cinemato.ui.reservation.payment.PaymentController;
 import main.java.Cinemato.ui.reservation.seatSelector.seat.SeatController;
 import main.java.Cinemato.ui.wrapper.WrapperController;
-import sun.plugin.javascript.navig.Anchor;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class SeatSelectorController implements Initializable {
+
+    public ArrayList<Seat> getSeatsSelected() {
+        return SeatsSelected;
+    }
+
+    public void addSeatsSelected(Seat seat) {
+        this.SeatsSelected.add(seat);
+    }
+
+    public void removeSeatsSelected(Seat seat) {
+        this.SeatsSelected.remove(seat);
+    }
 
     class MyClassConverter extends StringConverter<Screening> {
 
@@ -68,6 +73,11 @@ public class SeatSelectorController implements Initializable {
 
     private ArrayList<Screening> Screenings = new ArrayList<>();
     private ArrayList<Seat> Seats = new ArrayList<>();
+    private ArrayList<Seat> SeatsSelected = new ArrayList<>();
+    private Screening ScreeningSelected;
+
+
+
 
     @FXML
     private ChoiceBox<Screening> choiceData;
@@ -89,7 +99,10 @@ public class SeatSelectorController implements Initializable {
 
     @FXML
     private void handleGoToPaymentAction(ActionEvent event) {
+
+
         WrapperController.getInstance().changeContentToPayment(event);
+        PaymentController.getInstance().setData(movie, ScreeningSelected, SeatsSelected);
     }
 
     @FXML
@@ -98,24 +111,31 @@ public class SeatSelectorController implements Initializable {
     }
 
     @FXML
-    private void ShowSelectedDate(ActionEvent event) {
-
+    private void selectScreening(ActionEvent event) {
 
         ArrayList<String> query = new ArrayList<>();
         query.add(Integer.toString(choiceData.getValue().getId()));
 
         Message getSeatsReserved = null;
 
+        for(Seat seat : this.Seats){
+            seat.setAvailable(true);
+        }
+
         try {
             getSeatsReserved = Client.sendMessage(new Message("getSeatsReserved", query));
             ArrayList<String> body = getSeatsReserved.getBody();
 
             for (String seat_id : body) {
+                System.out.println("zarezerwowane: ");
                 System.out.println(seat_id);
-
-                this.Seats.get(Integer.parseInt(seat_id)).setAvailable(false);
-                SeatController.getInstance().setDisabled(true);
+                System.out.println("do zarezerowania: ");
+                System.out.println(this.Seats.get(Integer.parseInt(seat_id) - 1).getId());
+                    this.Seats.get(Integer.parseInt(seat_id) - 1).setAvailable(false);
             }
+
+            renderSeats();
+            this.ScreeningSelected = choiceData.getValue();
             System.out.println(choiceData.getValue().getId());
         } catch (IOException e) {
             e.printStackTrace();
@@ -155,11 +175,27 @@ public class SeatSelectorController implements Initializable {
 
     }
 
+
+    public void renderSeats() throws IOException {
+
+        seatsPane.clear();
+        seatsRow.getChildren().clear();
+
+        for (Seat seat : this.Seats) {
+            AnchorPane x;
+            x = FXMLLoader.load(getClass().getResource("/main/java/Cinemato/ui/reservation/seatSelector/seat/seat.fxml"));
+            this.seatsPane.add(x);
+            SeatController.getInstance().setSeat(seat);
+            if(!seat.isAvailable()) SeatController.getInstance().setDisabled(true);
+        }
+        seatsRow.getChildren().addAll(seatsPane);
+    }
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         Message getSeatsListResponse = null;
-        AnchorPane x;
         try {
             getSeatsListResponse = Client.sendMessage(new Message("getSeatsList", new ArrayList<>()));
             ArrayList<String> body = getSeatsListResponse.getBody();
@@ -170,24 +206,23 @@ public class SeatSelectorController implements Initializable {
                 String[] splitedSeat = seat.split("&");
                 Seat importedSeat = new Seat(Integer.parseInt(splitedSeat[0]),splitedSeat[1],Integer.parseInt(splitedSeat[2]));
                 this.Seats.add(importedSeat);
-
-                x = FXMLLoader.load(getClass().getResource("/main/java/Cinemato/ui/reservation/seatSelector/seat/seat.fxml"));
-                this.seatsPane.add(x);
-                SeatController.getInstance().setSeat(importedSeat);
-
-
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
 
-        seatsRow.getChildren().addAll(seatsPane);
 
-        choiceData.setOnAction(this::ShowSelectedDate);
+        try {
+            renderSeats();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        choiceHour.getItems().add("Hour 1");
-        choiceHour.getItems().add("Hour 2");
-        choiceHour.getItems().add("Hour 3");
+        choiceData.setOnAction(this::selectScreening);
+
+        choiceHour.getItems().add("Mialo dzialac, braklo czasu!");
+        choiceHour.getItems().add("Mialo dzialac, braklo czasu!");
+        choiceHour.getItems().add("Mialo dzialac, braklo czasu!");
 
 
     }

@@ -1,28 +1,12 @@
 package main.java.Cinemato.ui.reservation.seatSelector.seat;
 
 
-import com.jfoenix.controls.JFXButton;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
-import javafx.util.StringConverter;
-import main.java.Cinemato.connection.Client;
-import main.java.Cinemato.connection.Message;
-import main.java.Cinemato.models.Movie;
-import main.java.Cinemato.models.Screening;
 import main.java.Cinemato.models.Seat;
-import main.java.Cinemato.ui.wrapper.WrapperController;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+import main.java.Cinemato.ui.reservation.seatSelector.SeatSelectorController;
 
 public class SeatController {
 
@@ -48,16 +32,17 @@ public class SeatController {
     @FXML
     private ImageView seatImage;
 
+
     private Image selected = new Image("main/java/Cinemato/resources/assets/seat_selected.png");
     private Image available = new Image("main/java/Cinemato/resources/assets/seat.png");
     private Image disabled = new Image("main/java/Cinemato/resources/assets/seat_disabled.png");
 
-
     public void setDisabled(boolean isDisabled) {
         this.isDisabled = isDisabled;
 
-        if(this.isDisabled) {
+        if (this.isDisabled) {
             this.seatImage.setImage(disabled);
+            System.out.println("disabled!!");
         }
     }
 
@@ -68,15 +53,22 @@ public class SeatController {
 
     public void chooseSeat(MouseEvent e) {
 
-        if (isSelected) {
-            this.seatImage.setImage(available);
+        if (!isDisabled) {
+            if (isSelected) {
+                this.seatImage.setImage(available);
+                SeatSelectorController.getInstance().removeSeatsSelected(this.seat);
 
-        } else
-            this.seatImage.setImage(selected);
+            } else{
+                this.seatImage.setImage(selected);
+                SeatSelectorController.getInstance().addSeatsSelected(this.seat);
+            }
 
 
-        this.isSelected = !this.isSelected;
-        System.out.println("Selectec seat: "+this.seat.getId());
-}
+            this.isSelected = !this.isSelected;
+            System.out.println("Selectec seat: " + this.seat.getId());
+
+            System.out.println(SeatSelectorController.getInstance().getSeatsSelected());
+        }
+    }
 
 }

@@ -71,10 +71,10 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Text>
-      <Text fill="#ff0e39" layoutX="230.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Movie title" />
-      <Text fill="#ff0e39" layoutX="232.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-12-05" />
-      <Text fill="#ff0e39" layoutX="232.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19:30" />
-      <Text fill="#ff0e39" layoutX="232.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E12.E13" />
+      <Text fx:id="movieTitle" fill="#ff0e39" layoutX="230.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Movie title" />
+      <Text fx:id="date" fill="#ff0e39" layoutX="232.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-12-05" />
+      <Text fx:id="hour" fill="#ff0e39" layoutX="232.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19:30" />
+      <Text fx:id="places" fill="#ff0e39" layoutX="232.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E12.E13" />
       <Text fill="#4d4d4d" layoutX="91.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; powrót" />
       <JFXButton layoutX="734.0" layoutY="394.0" text="Potwierdzam rezerwację" textFill="WHITE" />
       <JFXTextField focusColor="#ff0e39" layoutX="719.0" layoutY="232.0" promptText="Miesiąc" unFocusColor="#8d8d8d" />
