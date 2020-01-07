@@ -16,11 +16,11 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Text>
-      <JFXTextField focusColor="#ff0e39" layoutX="450.0" layoutY="128.0" promptText="Imie" unFocusColor="#8d8d8d" />
-      <JFXTextField focusColor="#ff0e39" layoutX="450.0" layoutY="178.0" promptText="Nazwisko" unFocusColor="#8d8d8d" />
-      <JFXTextField focusColor="#ff0e39" layoutX="450.0" layoutY="228.0" promptText="Email" unFocusColor="#8d8d8d" />
-      <JFXTextField focusColor="#ff0e39" layoutX="719.0" layoutY="132.0" promptText="Numer karty debetowej" unFocusColor="#8d8d8d" />
-      <JFXTextField focusColor="#ff0e39" layoutX="719.0" layoutY="182.0" promptText="Kod CVV" unFocusColor="#8d8d8d" />
+      <JFXTextField fx:id="firstName" focusColor="#ff0e39" layoutX="450.0" layoutY="128.0" promptText="Imie" unFocusColor="#8d8d8d" />
+      <JFXTextField fx:id="lastName" focusColor="#ff0e39" layoutX="450.0" layoutY="178.0" promptText="Nazwisko" unFocusColor="#8d8d8d" />
+      <JFXTextField fx:id="email" focusColor="#ff0e39" layoutX="450.0" layoutY="228.0" promptText="Email" unFocusColor="#8d8d8d" />
+      <JFXTextField fx:id="cardNumber" focusColor="#ff0e39" layoutX="719.0" layoutY="132.0" promptText="Numer karty debetowej" unFocusColor="#8d8d8d" />
+      <JFXTextField fx:id="cvv" focusColor="#ff0e39" layoutX="719.0" layoutY="182.0" promptText="Kod CVV" unFocusColor="#8d8d8d" />
       <Text fill="WHITE" layoutX="747.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PŁATNOŚĆ">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -76,9 +76,9 @@
       <Text fx:id="hour" fill="#ff0e39" layoutX="232.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19:30" />
       <Text fx:id="places" fill="#ff0e39" layoutX="232.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E12.E13" />
       <Text fill="#4d4d4d" layoutX="91.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; powrót" />
-      <JFXButton layoutX="734.0" layoutY="394.0" text="Potwierdzam rezerwację" textFill="WHITE" />
-      <JFXTextField focusColor="#ff0e39" layoutX="719.0" layoutY="232.0" promptText="Miesiąc" unFocusColor="#8d8d8d" />
-      <JFXTextField focusColor="#ff0e39" layoutX="719.0" layoutY="282.0" promptText="Rok" unFocusColor="#8d8d8d" />
+      <JFXButton fx:id="saveButton" layoutX="734.0" layoutY="394.0" onAction="#makeReservation" text="Potwierdzam rezerwację" textFill="WHITE" />
+      <JFXTextField fx:id="month" focusColor="#ff0e39" layoutX="719.0" layoutY="232.0" promptText="Miesiąc" unFocusColor="#8d8d8d" />
+      <JFXTextField fx:id="year" focusColor="#ff0e39" layoutX="719.0" layoutY="282.0" promptText="Rok" unFocusColor="#8d8d8d" />
    </children>
    <stylesheets>
       <URL value="@../../main.css" />

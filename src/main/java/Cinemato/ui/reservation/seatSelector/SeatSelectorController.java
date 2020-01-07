@@ -97,7 +97,6 @@ public class SeatSelectorController implements Initializable {
     @FXML
     private void handleGoToPaymentAction(ActionEvent event) {
 
-
         WrapperController.getInstance().changeContentToPayment(event);
         PaymentController.getInstance().setData(movie, ScreeningSelected, SeatsSelected);
     }
@@ -115,10 +114,31 @@ public class SeatSelectorController implements Initializable {
 
         Message getSeatsReserved = null;
         SeatsSelected.clear();
+        Seats.clear();
+
+        Message getSeatsListResponse = null;
+        try {
+            getSeatsListResponse = Client.sendMessage(new Message("getSeatsList", query));
+            ArrayList<String> body = getSeatsListResponse.getBody();
+
+            System.out.println("Lista siedzen:");
+            for (String seat : body) {
+                System.out.println(seat);
+
+                String[] splitedSeat = seat.split("&");
+                Seat importedSeat = new Seat(Integer.parseInt(splitedSeat[0]),splitedSeat[1],Integer.parseInt(splitedSeat[2]));
+                importedSeat.setAvailable(false);
+                this.Seats.add(importedSeat);
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
 
         for(Seat seat : this.Seats){
             seat.setAvailable(true);
+            System.out.println(seat.getId());
         }
+
 
         try {
             getSeatsReserved = Client.sendMessage(new Message("getSeatsReserved", query));
@@ -128,8 +148,8 @@ public class SeatSelectorController implements Initializable {
                 System.out.println("zarezerwowane: ");
                 System.out.println(seat_id);
                 System.out.println("do zarezerowania: ");
-                System.out.println(this.Seats.get(Integer.parseInt(seat_id) - 1).getId());
-                    this.Seats.get(Integer.parseInt(seat_id) - 1).setAvailable(false);
+                System.out.println(this.Seats.get(Integer.parseInt(seat_id) -((choiceData.getValue().getId()-1)*6) -1).getId());
+                    this.Seats.get(Integer.parseInt(seat_id) -((choiceData.getValue().getId()-1)*6) -1).setAvailable(false);
             }
 
             renderSeats();
@@ -193,29 +213,29 @@ public class SeatSelectorController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        Message getSeatsListResponse = null;
-        try {
-            getSeatsListResponse = Client.sendMessage(new Message("getSeatsList", new ArrayList<>()));
-            ArrayList<String> body = getSeatsListResponse.getBody();
-
-            for (String seat : body) {
-                System.out.println(seat);
-
-                String[] splitedSeat = seat.split("&");
-                Seat importedSeat = new Seat(Integer.parseInt(splitedSeat[0]),splitedSeat[1],Integer.parseInt(splitedSeat[2]));
-                importedSeat.setAvailable(false);
-                this.Seats.add(importedSeat);
-            }
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
-
-        try {
-            renderSeats();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        Message getSeatsListResponse = null;
+//        try {
+//            getSeatsListResponse = Client.sendMessage(new Message("getSeatsList", new ArrayList<>()));
+//            ArrayList<String> body = getSeatsListResponse.getBody();
+//
+//            for (String seat : body) {
+//                System.out.println(seat);
+//
+//                String[] splitedSeat = seat.split("&");
+//                Seat importedSeat = new Seat(Integer.parseInt(splitedSeat[0]),splitedSeat[1],Integer.parseInt(splitedSeat[2]));
+//                importedSeat.setAvailable(false);
+//                this.Seats.add(importedSeat);
+//            }
+//        } catch (IOException | ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//
+//        try {
+//            renderSeats();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         choiceData.setOnAction(this::selectScreening);
 
