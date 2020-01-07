@@ -76,9 +76,6 @@ public class SeatSelectorController implements Initializable {
     private ArrayList<Seat> SeatsSelected = new ArrayList<>();
     private Screening ScreeningSelected;
 
-
-
-
     @FXML
     private ChoiceBox<Screening> choiceData;
 
@@ -117,6 +114,7 @@ public class SeatSelectorController implements Initializable {
         query.add(Integer.toString(choiceData.getValue().getId()));
 
         Message getSeatsReserved = null;
+        SeatsSelected.clear();
 
         for(Seat seat : this.Seats){
             seat.setAvailable(true);
@@ -205,6 +203,7 @@ public class SeatSelectorController implements Initializable {
 
                 String[] splitedSeat = seat.split("&");
                 Seat importedSeat = new Seat(Integer.parseInt(splitedSeat[0]),splitedSeat[1],Integer.parseInt(splitedSeat[2]));
+                importedSeat.setAvailable(false);
                 this.Seats.add(importedSeat);
             }
         } catch (IOException | ClassNotFoundException e) {
