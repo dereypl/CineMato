@@ -49,9 +49,9 @@ public class PaymentController {
         date.setText(screening.getDate());
         hour.setText(screening.getStartTime());
 
-        String selectedPlaces="";
+        String selectedPlaces = "";
         for (Seat place : seatsSelected) {
-            selectedPlaces += place.getRow() + place.getNumber() + " | ";
+            selectedPlaces += " | " + place.getRow() + place.getNumber();
         }
         places.setText(selectedPlaces);
 
