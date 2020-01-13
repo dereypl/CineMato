@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import main.java.Cinemato.connection.Client;
 import main.java.Cinemato.connection.Message;
@@ -15,6 +16,7 @@ import main.java.Cinemato.models.Seat;
 import main.java.Cinemato.ui.reservation.seatSelector.SeatSelectorController;
 
 import javafx.event.ActionEvent;
+import main.java.Cinemato.ui.wrapper.WrapperController;
 
 import java.io.File;
 import java.io.IOException;
@@ -97,6 +99,11 @@ public class PaymentController {
 
     }
 
+    @FXML
+    private void handleGoBackAction(MouseEvent event) {
+        WrapperController.getInstance().changeContentToSeatSelector();
+        SeatSelectorController.getInstance().setMovie(movie);
+    }
 
     @FXML
     public void makeReservation(ActionEvent event) {

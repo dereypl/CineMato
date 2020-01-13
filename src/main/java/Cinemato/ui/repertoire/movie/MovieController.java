@@ -59,7 +59,7 @@ public class MovieController {
 
     @FXML
     void chooseMovie(ActionEvent event) {
-        WrapperController.getInstance().changeContentToSeatSelector(event);
+        WrapperController.getInstance().changeContentToSeatSelector();
         SeatSelectorController.getInstance().setMovie(movie);
     }
 

@@ -85,7 +85,7 @@ public class WrapperController extends MainController {
     }
 
     @FXML
-    public void changeContentToSeatSelector(ActionEvent event) {
+    public void changeContentToSeatSelector() {
         setContentPage(contentPane, "/main/java/Cinemato/ui/reservation/seatSelector/seatSelector.fxml");
     }
 

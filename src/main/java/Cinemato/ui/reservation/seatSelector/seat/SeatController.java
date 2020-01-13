@@ -51,6 +51,10 @@ public class SeatController {
         this.seat = s;
     }
 
+    public void unSelect() {
+        this.isSelected = false;
+    }
+
     public void chooseSeat(MouseEvent e) {
 
         if (!isDisabled) {
@@ -63,7 +67,7 @@ public class SeatController {
                 SeatSelectorController.getInstance().addSeatsSelected(this.seat);
             }
 
-
+//            SeatSelectorController.getInstance().clearSelectedSeats();
             this.isSelected = !this.isSelected;
             System.out.println("Selectec seat: " + this.seat.getId());
 

@@ -32,7 +32,7 @@
             <Font size="14.0" />
          </font></Text>
       <Text fx:id="goBackButton" fill="#4d4d4d" layoutX="91.0" layoutY="57.0" onMousePressed="#handleGoBackAction" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; powrót" />
-      <JFXButton fx:id="goToPaymentButton" layoutX="774.0" layoutY="394.0" onAction="#handleGoToPaymentAction" text="Przejdź do płatności" textFill="WHITE" />
+      <JFXButton fx:id="goToPaymentButton" layoutX="714.0" layoutY="389.0" onAction="#handleGoToPaymentAction" styleClass="actionButton" stylesheets="@../../main.css" text="Przejdź do płatności" textFill="WHITE" />
       <ChoiceBox fx:id="choiceData" layoutX="91.0" layoutY="180.0" prefWidth="150.0" />
       <Text fill="WHITE" layoutX="120.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GODZINA">
          <font>

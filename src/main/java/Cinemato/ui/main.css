@@ -8,3 +8,11 @@
 .noBackground{
     -fx-background-color:transparent;
 }
+
+.actionButton{
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: #272727;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 35px;
+}

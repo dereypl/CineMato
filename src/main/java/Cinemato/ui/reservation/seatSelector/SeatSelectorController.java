@@ -33,6 +33,8 @@ public class SeatSelectorController implements Initializable {
     }
 
     public void addSeatsSelected(Seat seat) {
+//        this.SeatsSelected.clear(); // TODO: do not use when selecting more than one seat allowed
+//        this.clearSelectedSeats();
         this.SeatsSelected.add(seat);
     }
 
@@ -208,6 +210,13 @@ public class SeatSelectorController implements Initializable {
         }
         seatsRow.getChildren().addAll(seatsPane);
     }
+
+//    public void clearSelectedSeats(){
+//
+//        for (Seat seat : this.Seats){
+//            SeatController.getInstance().unSelect();
+//        }
+//    }
 
 
     @Override

@@ -75,10 +75,11 @@
       <Text fx:id="date" fill="#ff0e39" layoutX="232.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-12-05" />
       <Text fx:id="hour" fill="#ff0e39" layoutX="232.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19:30" />
       <Text fx:id="places" fill="#ff0e39" layoutX="232.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E12.E13" />
-      <Text fill="#4d4d4d" layoutX="91.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; powrót" />
-      <JFXButton fx:id="saveButton" layoutX="734.0" layoutY="394.0" onAction="#makeReservation" text="Potwierdzam rezerwację" textFill="WHITE" />
+      <Text fx:id="BackButton" fill="#4d4d4d" layoutX="91.0" layoutY="37.0" onMousePressed="#handleGoBackAction" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; powrót*" />
+      <JFXButton fx:id="saveButton" layoutX="714.0" layoutY="389.0" onAction="#makeReservation" styleClass="actionButton" stylesheets="@../../main.css" text="Potwierdzam rezerwację" textFill="WHITE" />
       <JFXTextField fx:id="month" focusColor="#ff0e39" layoutX="719.0" layoutY="232.0" promptText="Miesiąc" unFocusColor="#8d8d8d" />
       <JFXTextField fx:id="year" focusColor="#ff0e39" layoutX="719.0" layoutY="282.0" promptText="Rok" unFocusColor="#8d8d8d" />
+      <Text fill="#4d4d4d" layoutX="91.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* wybrane miejsca zostaną utraone" />
    </children>
    <stylesheets>
       <URL value="@../../main.css" />
