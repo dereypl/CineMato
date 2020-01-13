@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
@@ -31,7 +32,7 @@
                         <Font size="10.0" />
                      </font>
                   </Text>
-            <Pane layoutX="30.0" prefHeight="130.0" prefWidth="90.0" style="-fx-background-color: white;" />
+            <ImageView fx:id="Poster" fitHeight="130.0" fitWidth="90.0" layoutX="31.0" pickOnBounds="true" preserveRatio="true" />
             <Text fx:id="movieRating" fill="#ff0e39" layoutX="134.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7,4" />
             <Text fx:id="movieYear" fill="#323233" layoutX="162.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2001" />
             <Text fx:id="movieDuration" fill="#323233" layoutX="202.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100" />

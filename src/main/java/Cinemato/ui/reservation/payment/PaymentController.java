@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import main.java.Cinemato.connection.Client;
 import main.java.Cinemato.connection.Message;
@@ -13,6 +15,8 @@ import main.java.Cinemato.models.Seat;
 import main.java.Cinemato.ui.reservation.seatSelector.SeatSelectorController;
 
 import javafx.event.ActionEvent;
+
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -71,6 +75,9 @@ public class PaymentController {
     @FXML
     private JFXTextField year;
 
+    @FXML
+    private ImageView Poster;
+
 
     public void setData(Movie m, Screening s, ArrayList<Seat> seats) {
         this.movie = m;
@@ -79,6 +86,8 @@ public class PaymentController {
         movieTitle.setText(movie.getTitle());
         date.setText(screening.getDate());
         hour.setText(screening.getStartTime());
+        Image image = new Image(new File(m.getPosterLink()).toURI().toString());
+        Poster.setImage(image);
 
         String selectedPlaces = "";
         for (Seat place : seatsSelected) {

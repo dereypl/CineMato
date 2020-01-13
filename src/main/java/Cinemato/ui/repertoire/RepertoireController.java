@@ -57,7 +57,7 @@ public class RepertoireController implements Initializable {
 
                 String[] splitedMovie = movie.split("&");
 
-                Movie importedMovie = new Movie(Integer.parseInt(splitedMovie[0]), splitedMovie[1], splitedMovie[2], splitedMovie[3], splitedMovie[4], splitedMovie[5], splitedMovie[6], splitedMovie[7]);
+                Movie importedMovie = new Movie(Integer.parseInt(splitedMovie[0]), splitedMovie[1], splitedMovie[2], splitedMovie[3], splitedMovie[4], splitedMovie[5], splitedMovie[6], splitedMovie[7],splitedMovie[8]);
                 movies.add(importedMovie);
             }
 

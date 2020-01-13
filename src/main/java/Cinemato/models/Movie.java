@@ -10,8 +10,9 @@ public class Movie {
     private String Year;
     private String Rating;
     private String Duration_min;
+    private String PosterLink;
 
-    public Movie(int id, String title, String director, String genre, String description, String year, String rating, String duration_min) {
+    public Movie(int id, String title, String director, String genre, String description, String year, String rating, String duration_min, String poster_link) {
         Id = id;
         Title = title;
         Director = director;
@@ -20,6 +21,7 @@ public class Movie {
         Year = year;
         Rating = rating;
         Duration_min = duration_min;
+        PosterLink = poster_link;
     }
 
     public String getTitle() {
@@ -52,6 +54,10 @@ public class Movie {
 
     public String getId() {
         return Integer.toString(Id);
+    }
+
+    public String getPosterLink() {
+        return PosterLink;
     }
 
 

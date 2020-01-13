@@ -46,7 +46,7 @@
             <Image url="@../../../resources/assets/payment_icon.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="184.0" fitWidth="127.0" layoutX="91.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Poster" fitHeight="184.0" fitWidth="127.0" layoutX="91.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../resources/assets/poster.png" />
          </image>
