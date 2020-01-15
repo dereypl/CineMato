@@ -33,7 +33,7 @@ public class HomeController implements Initializable {
 
     @FXML
     private void handleGoToRepertoireAction(ActionEvent event) {
-        WrapperController.getInstance().changeContentToRepertoire(event);
+        WrapperController.getInstance().changeContentToRepertoire();
     }
 
     @Override

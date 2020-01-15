@@ -73,7 +73,7 @@ public class WrapperController extends MainController {
     }
 
     @FXML
-    public void changeContentToRepertoire(ActionEvent event) {
+    public void changeContentToRepertoire() {
         try {
             AnchorPane temp;
             temp = FXMLLoader.load(getClass().getResource("/main/java/Cinemato/ui/header/header.fxml"));

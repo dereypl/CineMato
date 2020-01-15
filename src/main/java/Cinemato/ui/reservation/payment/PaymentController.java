@@ -151,6 +151,8 @@ public class PaymentController {
 
             WrapperController.getInstance().changeContentToReservationStatus();
             StatusController.getInstance().setReservationStatus(reposeBody.get(0));
+            StatusController.getInstance().setData(movie, screening, seatsSelected);
+
         });
 
         new Thread(MakeReservationTask).start();
