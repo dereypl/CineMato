@@ -18,7 +18,6 @@ public class Main {
 
 //        Communicate();
         Client.startConnection("127.0.0.1", 8808);
-
         Application.launch(WrapperController.class);
 
     }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="homePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="460.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.Cinemato.ui.reservation.status.StatusController">
+   <children>
+      <Text fx:id="StatusInfo" fill="WHITE" layoutX="517.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REZERWACJA PRZEBIEGŁA POMYŚLNIE" textAlignment="CENTER" wrappingWidth="300.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="120.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STATUS REZERWACJI">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="91.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/movie_icon.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Poster" fitHeight="184.0" fitWidth="127.0" layoutX="91.0" layoutY="126.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/poster.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="231.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Film">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="232.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="231.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Godzina">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="231.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Miejsca">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="movieTitle" fill="#ff0e39" layoutX="230.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Movie title" />
+      <Text fx:id="date" fill="#ff0e39" layoutX="232.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2019-12-05" />
+      <Text fx:id="hour" fill="#ff0e39" layoutX="232.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="19:30" />
+      <Text fx:id="places" fill="#ff0e39" layoutX="232.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E12.E13" />
+      <JFXButton fx:id="saveButton" layoutX="577.0" layoutY="280.0" styleClass="actionButton" stylesheets="@../../main.css" text="Wróć do repertuatu" textFill="WHITE" />
+      <Text fx:id="StatusDescription" fill="#4d4d4d" layoutX="485.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Potwierdzenie rezerwacji zostranie wysłane na wskazany adres email." />
+      <ImageView fx:id="StatusImage" fitHeight="88.0" fitWidth="104.0" layoutX="622.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/assets/confirmed.png" />
+         </image>
+      </ImageView>
+   </children>
+   <stylesheets>
+      <URL value="@../../main.css" />
+      <URL value="@status.css" />
+   </stylesheets>
+</AnchorPane>

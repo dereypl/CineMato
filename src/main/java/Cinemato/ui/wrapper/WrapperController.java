@@ -95,6 +95,11 @@ public class WrapperController extends MainController {
     }
 
     @FXML
+    public void changeContentToReservationStatus() {
+        setContentPage(contentPane, "/main/java/Cinemato/ui/reservation/status/status.fxml");
+    }
+
+    @FXML
     public void backToRepertoire(MouseEvent event) {
         setContentPage(contentPane, "/main/java/Cinemato/ui/repertoire/repertoire.fxml");
     }
