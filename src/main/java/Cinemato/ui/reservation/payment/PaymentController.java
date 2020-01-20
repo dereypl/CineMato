@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -86,6 +87,8 @@ public class PaymentController {
     @FXML
     private ImageView Poster;
 
+    @FXML
+    private Label errorLabel;
 
     public void setData(Movie m, Screening s, ArrayList<Seat> seats) {
         this.movie = m;
@@ -104,6 +107,19 @@ public class PaymentController {
         places.setText(selectedPlaces);
 
     }
+
+
+    public boolean validateForm() {
+
+        return !firstName.getText().trim().isEmpty()
+                && !lastName.getText().trim().isEmpty()
+                && !email.getText().trim().isEmpty()
+                && !cardNumber.getText().trim().isEmpty()
+                && !cvv.getText().trim().isEmpty()
+                && !month.getText().trim().isEmpty()
+                && !year.getText().trim().isEmpty();
+    }
+
 
     @FXML
     private void handleGoBackAction(MouseEvent event) {
@@ -155,10 +171,19 @@ public class PaymentController {
 
         });
 
-        new Thread(MakeReservationTask).start();
+
+        if (validateForm()) {
+            new Thread(MakeReservationTask).start();
+            errorLabel.setText("");
+
+        } else {
+            errorLabel.setText("Proszę uzupełnić wszystkie pola!");
+        }
+    }
+}
 
 
-        //TODO: Change FixedThreadPool size = seats reserved array size
+    //TODO: Change FixedThreadPool size = seats reserved array size
 //        ExecutorService executorService = Executors.newFixedThreadPool(1);
 //        for (int i = 0; i < 1; i++) {
 //            Runnable parallelMakeReservationTask = () -> {
@@ -180,8 +205,7 @@ public class PaymentController {
 //
 //        }
 //    }
-    }
-}
+
 
 
 

@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -80,6 +81,7 @@
       <JFXTextField fx:id="month" focusColor="#ff0e39" layoutX="719.0" layoutY="232.0" promptText="Miesiąc" unFocusColor="#8d8d8d" />
       <JFXTextField fx:id="year" focusColor="#ff0e39" layoutX="719.0" layoutY="282.0" promptText="Rok" unFocusColor="#8d8d8d" />
       <Text fill="#4d4d4d" layoutX="91.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* wybrane miejsca zostaną utraone" />
+      <Label fx:id="errorLabel" layoutX="718.0" layoutY="361.0" textFill="#ff0e39" />
    </children>
    <stylesheets>
       <URL value="@../../main.css" />

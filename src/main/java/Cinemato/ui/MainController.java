@@ -64,7 +64,7 @@ public abstract class MainController extends Application implements Initializabl
             Stage stage = new Stage(StageStyle.TRANSPARENT);
             stage.initStyle(StageStyle.TRANSPARENT);
             stage.initModality(Modality.APPLICATION_MODAL.APPLICATION_MODAL);
-            stage.setTitle("main.java.Cinemato - Cinema Booking System");
+            stage.setTitle("Cinemato - Cinema Booking System");
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
