@@ -1,10 +1,5 @@
 package main.java.Cinemato.models;
 
-import javafx.util.StringConverter;
-
-import java.sql.Time;
-import java.sql.Date;
-
 public class Screening {
 
 

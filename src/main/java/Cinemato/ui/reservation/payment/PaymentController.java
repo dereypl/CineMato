@@ -3,8 +3,8 @@ package main.java.Cinemato.ui.reservation.payment;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.concurrent.Task;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -16,20 +16,12 @@ import main.java.Cinemato.models.Movie;
 import main.java.Cinemato.models.Screening;
 import main.java.Cinemato.models.Seat;
 import main.java.Cinemato.ui.reservation.seatSelector.SeatSelectorController;
-
-import javafx.event.ActionEvent;
 import main.java.Cinemato.ui.reservation.status.StatusController;
 import main.java.Cinemato.ui.wrapper.WrapperController;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.ResourceBundle;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 public class PaymentController {
 
@@ -181,30 +173,6 @@ public class PaymentController {
         }
     }
 }
-
-
-    //TODO: Change FixedThreadPool size = seats reserved array size
-//        ExecutorService executorService = Executors.newFixedThreadPool(1);
-//        for (int i = 0; i < 1; i++) {
-//            Runnable parallelMakeReservationTask = () -> {
-//                try {
-//                    Message response = null;
-//                    response = Client.sendMessage(new Message("reservationRequest", query));
-//                    ArrayList<String> body = response.getBody();
-//
-//                    for (String info : body) {
-//                        System.out.println(info);
-//                    }
-//
-//                } catch (IOException | ClassNotFoundException e) {
-//                    e.printStackTrace();
-//                }
-//            };
-//            executorService.submit(parallelMakeReservationTask);
-//            executorService.shutdown();
-//
-//        }
-//    }
 
 
 
